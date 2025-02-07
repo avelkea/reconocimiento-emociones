@@ -95,9 +95,8 @@ También falló la instalación de pykms, una dependencia requerida para la visu
 	    2. OpenCV no estaba accediendo correctamente a la cámara.
             3. La IP era accesible, pero Chrome bloqueaba la conexión (probablemente por HTTP en lugar de HTTPS).
 	+ **Solución:**
-	    1. Se usó
-	```
-        sudo ufw allow 5000/tcp
+	    1. Se usó:
+        ```sudo ufw allow 5000/tcp
         ```
          pero ufw estaba desactivado, por lo que no afectaba.
     	    2. Se probó abrir http://192.168.100.17:5000 en Safari, y funcionó, lo que confirmó que Chrome estaba bloqueando la conexión.
