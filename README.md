@@ -30,7 +30,32 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
 
 
 ## Funcionamiento <a name="funcionamiento"></a>
+```python
+mp_face_mesh = mp.solutions.face_mesh
+face_mesh = mp_face_mesh.FaceMesh(
+    max_num_faces=2,  # Máximo de 2 caras
+)
+```
+Aquí se inicializa un objeto que accede a FaceMesh, un módulo dentro de MediaPipe, este se configura para que se puedan detectar dos rostros al mismo tiempo. Prepara el modelo para cuando se quiera llamar para procesar las mallas de las caras.
+```python
+cap = cv2.VideoCapture(0)
 
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+```
+Se accede a la primera cámara disponible dentro del sistema (0). En ret se establece si hay un flujo de frames desde la camara, en frame se obtiene una matriz tridimensional que contiene el ancho y alto de los pixeles y los canales de las imagenes. Los canales son 3 (BGR), estos tienen un valor de 0 a 255 que indican la intensidad de azul, verde y rojo dentro de cada pixel. EL video es una sucesión muy rápida de imágenes capturadas que se muestran en la pantalla de manera continua. 
+```python
+results = face_mesh.process(rgb_frame)
+```
+MediaPipe ejecuta la detección de landmarks facieles en la imagen con ayuda de una red neuronal que identifica 468 puntos clave que en lugares como ojos, cejas, nariz, boca, etc. Después, se calculan las posiciones relativas de los landmarks faciales de la persona y devuelve unas coordenadas que sirven para dibujar los puntos.
+```python
+mouth_opening = np.linalg.norm(landmarks[MOUTH[0]] - landmarks[MOUTH[1]])
+            eyebrow_distance = np.linalg.norm(landmarks[LEFT_EYEBROW[0]] - landmarks[LEFT_EYEBROW[2]])
+```
+Se utilizan dos índices de los puntos clave de las cejas y la boca para ver la separacion de estos. Con la fórmula de distancia entre dos puntos se establece la distancia de separación. 
+d = sqrt((x2 - x1)^2 + (y2 - y1)^2)
 
 ## Características <a name="caracteristicas"></a>
 - Detecta hasta 2 rostros usando MediaPipe
