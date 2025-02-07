@@ -28,4 +28,6 @@ env\Scripts\activate     # En Windows
 ```bash
 pip install -r requirements.txt
 ```
-[Código ](src/prueba2)
+[Código usando Mediapipe](src/prueba2.py)
+
+[Código usando Deepface](src/prueba3.py)
