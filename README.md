@@ -20,9 +20,12 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
 ![Ejemplo de Detección](imagenes/imagen2.png)
 
 ## Tecnologías utilizadas <a name="tecnologías"></a>
--**Deep Face:** Para el reconocimiento de emociones
--**MediaPipe:** Para la detección de rostros en tiempo real
--**OpenCV:** Para la manipulación de imágenes y video
+
++ **Deep Face:** Para el reconocimiento de emociones
+
++ **MediaPipe:** Para la detección de rostros en tiempo real
+
++ **OpenCV:** Para la manipulación de imágenes y video
 
 
 ## Funcionamiento <a name="funcionamiento"></a>
