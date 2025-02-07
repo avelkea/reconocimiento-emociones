@@ -11,6 +11,7 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
    - [Crear y activar el entorno virtual](#crear-y-activar-el-entorno-virtual)  
    - [Instalar requirements](#instalar-requirements)
 7. [Links a los códigos](#links-a-los-codigos)
+8. [Problemas presentadfos a lo largo del proyecto](#problemas)
 
 ---
 
@@ -57,3 +58,10 @@ pip install -r requirements.txt
 [Código usando Mediapipe](src/prueba2.py)
 
 [Código usando Deepface](src/prueba3.py)
+
+## Problemas presentados durante el desarrollo del proyecto <a name="#problemas"></a>
+1. OpenCv no detectaba la cámara:
+    +	Problema: OpenCV arrojaba el error >can't open camera by index >, lo que indicaba que no podía acceder a /dev/video0.
+    +	Causa: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS.
+    +	Solución: Se intentó con v4l2-ctl --list-devices para identificar los dispositivos y se probó usar libcamera-hello, que sí reconoció la cámara.
+
