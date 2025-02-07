@@ -4,12 +4,13 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
 ## 📑 Tabla de Contenido
 1. [Ejemplo de ejecución del programa usando OpenCV y Mediapipe](#ejemplo-de-ejecucion-del-programa-usando-opencv-y-mediapipe)
 2. [Ejemplo de ejecución del programa usando OpenCV, Mediapipe y DeepFace](#ejemplo-de-ejecucion-del-programa-usando-opencv-mediapipe-y-deepface)
-3. [Funcionamiento](#funcionamiento)
-4. [Características](#caracteristicas)
-5. [Instalación y Configuración](#instalacion-y-configuracion)  
+3. [Tecnologías utilizadas](#tecnologías)
+4. [Funcionamiento](#funcionamiento)
+5. [Características](#caracteristicas)
+6. [Instalación y Configuración](#instalacion-y-configuracion)  
    - [Crear y activar el entorno virtual](#crear-y-activar-el-entorno-virtual)  
    - [Instalar requirements](#instalar-requirements)
-6. [Links a los códigos](#links-a-los-codigos)
+7. [Links a los códigos](#links-a-los-codigos)
 
 ---
 
@@ -17,6 +18,10 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
 ![Ejemplo de Detección](imagenes/imagen1.png)
 ## Ejemplo de ejecución del programa usando Open Cv, Mediapipe y Deepface <a name="ejemplo-de-ejecucion-del-programa-usando-opencv-mediapipe-y-deepface"></a>
 ![Ejemplo de Detección](imagenes/imagen2.png)
+
+## Tecnologías utilizadas <a name="tecnologías"></a>
+
+
 
 ## Funcionamiento <a name="funcionamiento"></a>
 
