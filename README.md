@@ -33,7 +33,7 @@ git clone https://github.com/usuario/proyecto-emociones.git
 cd proyecto-emociones
 ```
 
-### Crear y activar el entorno virtual <a name="#crear-y-activar-el-entorno-virtual)"></a>
+### Crear y activar el entorno virtual <a name="#crear-y-activar-el-entorno-virtual"></a>
 ```bash
 python -m venv env
 source env/bin/activate  # En macOS/Linux
