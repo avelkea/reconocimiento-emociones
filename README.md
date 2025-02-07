@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 3. **Problemas al instalar picamera2:**
 	+	**Problema:** Se intentó instalar picamera2, pero arrojaba el error:
-    No module named 'libcamera'
+   > No module named 'libcamera'
 
   	
 También falló la instalación de pykms, una dependencia requerida para la visualización con DRM.
