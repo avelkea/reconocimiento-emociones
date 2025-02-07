@@ -84,7 +84,7 @@ También falló la instalación de pykms, una dependencia requerida para la visu
    +  **Causa:**
 	    1.	libcamera no estaba disponible en el entorno virtual.
 	    2.	Se intentó instalar pykms, pero no existe en PyPI y no se podía instalar con pip.
-	+	**Solución:**
-	    +	Se enlazó libcamera dentro del entorno virtual, pero al final no funcionó correctamente con picamera2.
-	    + Se recomendó usar libcamera directamente en lugar de OpenCV/V4L2.
+   + **Solución:**
+	    1. Se enlazó libcamera dentro del entorno virtual, pero al final no funcionó correctamente con picamera2.
+	    2. Se recomendó usar libcamera directamente en lugar de OpenCV/V4L2.
 
