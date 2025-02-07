@@ -13,3 +13,17 @@ Mediante el uso de OpenCV, Mediapipe, Deepface y Python se clasifican emociones 
 - Se muestra la emoción detectada
 
 ## Instalación y configuración 
+```bash
+git clone https://github.com/usuario/proyecto-emociones.git
+cd proyecto-emociones
+```
+
+### Crear y activar el entorno virtual
+```bash
+python -m venv env
+source env/bin/activate  # En macOS/Linux
+env\Scripts\activate     # En Windows
+```
+### Instalar requirements
+```bash
+pip install -r requirements.txt
