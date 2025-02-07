@@ -1,4 +1,6 @@
 # Reconocimiento de emociones con Open Cv y Mediapipe
-Mediante el uso de Open CV y Mediapipe y Python se clasifican emociones en tiempo real.
+Mediante el uso de Open CV, Mediapipe, Deepface y Python se clasifican emociones en tiempo real.
 
-## Ejemplo de funcionamiento del programa 
+## Ejemplo de ejecución del programa usando Open Cv y Mediapipe
+
+## Ejemplo de ejecución del programa usando Open Cv, Mediapipe y Deepface
