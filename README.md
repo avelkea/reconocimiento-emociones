@@ -60,13 +60,31 @@ pip install -r requirements.txt
 [Código usando Deepface](src/prueba3.py)
 
 ## Problemas presentados durante el desarrollo del proyecto <a name="#problemas"></a>
-1. OpenCv no detectaba la cámara:
+1. **OpenCv no detectaba la cámara:**
     +	**Problema**: OpenCV arrojaba el error:
       
        can't open camera by index
    >
     lo que indicaba que no podía acceder a /dev/video0.
-    +	**Causa**: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS
+    +	**Causa**: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS.
     +	**Solución**: Se intentó con `v4l2-ctl --list-devices`
-     	 para identificar los dispositivos y se probó usar `libcamera-hello`, que sí reconoció la cámara
+     	 para identificar los dispositivos y se probó usar `libcamera-hello`, que sí reconoció la cámara.
+
+2. **Se detectaban muchos dispositivos en /dev/video:**
+   + **Problema:** ls /dev/video* arrojaba una gran cantidad de dispositivos (/dev/video0, /dev/video1, /dev/video20-/dev/video35), lo que hacía difícil identificar cuál era la cámara real.
+	+ **Causa:** Raspberry Pi usa varios dispositivos virtuales para la GPU, procesamiento de video y diferentes pipelines de captura.
+	+	**Solución:** Se ejecutó `v4l2-ctl --list-devices` y `libcamera-hello --list-cameras` para identificar la cámara correcta, que resultó ser imx708 con /dev/video0.
+
+3. **Problemas al instalar picamera2:**
+	+	**Problema:** Se intentó instalar picamera2, pero arrojaba el error
+ModuleNotFoundError: No module named 'libcamera'
+>
+
+	También falló la instalación de pykms, una dependencia requerida para la visualización con DRM.
+   +  **Causa:**
+	    1.	libcamera no estaba disponible en el entorno virtual.
+	    2.	Se intentó instalar pykms, pero no existe en PyPI y no se podía instalar con pip.
+	+	**Solución:**
+	    +	Se enlazó libcamera dentro del entorno virtual, pero al final no funcionó correctamente con picamera2.
+	    + Se recomendó usar libcamera directamente en lugar de OpenCV/V4L2.
 
