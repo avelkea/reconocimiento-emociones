@@ -27,3 +27,5 @@ env\Scripts\activate     # En Windows
 ### Instalar requirements
 ```bash
 pip install -r requirements.txt
+```
+[Código ](src/prueba2)
