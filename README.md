@@ -98,5 +98,6 @@ También falló la instalación de pykms, una dependencia requerida para la visu
 	    1. Se usó:
         ```sudo ufw allow 5000/tcp ```
          pero ufw estaba desactivado, por lo que no afectaba.
+
     	    2. Se probó abrir http://192.168.100.17:5000 en Safari, y funcionó, lo que confirmó que Chrome estaba bloqueando la conexión.
 
