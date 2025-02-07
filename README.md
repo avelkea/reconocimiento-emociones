@@ -66,9 +66,7 @@ pip install -r requirements.txt
        can't open camera by index
    >
     lo que indicaba que no podía acceder a /dev/video0.
-    +	**Causa**: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS.
+    +	**Causa**: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS
     +	**Solución**: Se intentó con `v4l2-ctl --list-devices`
-  
-      
-     	 para identificar los dispositivos y se probó usar 'libcamera-hello', que sí reconoció la cámara.
+     	 para identificar los dispositivos y se probó usar `libcamera-hello`, que sí reconoció la cámara
 
