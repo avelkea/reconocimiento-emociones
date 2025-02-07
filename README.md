@@ -76,12 +76,7 @@ pip install -r requirements.txt
 	+	**Solución:** Se ejecutó `v4l2-ctl --list-devices` y `libcamera-hello --list-cameras` para identificar la cámara correcta, que resultó ser imx708 con /dev/video0.
 
 3. **Problemas al instalar picamera2:**
-	+	**Problema:** Se intentó instalar picamera2, pero arrojaba el error
-
-> ModuleNotFoundError: No module named 'libcamera'
-> 
-
-
+	+	**Problema:** Se intentó instalar picamera2, pero arrojaba el error:
 	También falló la instalación de pykms, una dependencia requerida para la visualización con DRM.
    +  **Causa:**
 	    1.	libcamera no estaba disponible en el entorno virtual.
