@@ -93,7 +93,7 @@ pip install -r requirements.txt
     lo que indicaba que no podía acceder a /dev/video0.
     +	**Causa**: Pi Camera Module 3 no usa V4L2 (Video4Linux2) por defecto, sino que está diseñada para funcionar con libcamera en Raspberry Pi OS.
     +	**Solución**: Se intentó con `v4l2-ctl --list-devices`
-     	 para identificar los dispositivos y se probó usar `libcamera-hello`, que sí reconoció la cámara.
+     	 para identificar los dispositivos y usando `libcamera-hello`, que sí reconoció la cámara.
 
 2. **Se detectaban muchos dispositivos en /dev/video:**
    + **Problema:** ls /dev/video* arrojaba una gran cantidad de dispositivos (/dev/video0, /dev/video1, /dev/video20-/dev/video35), lo que hacía difícil identificar cuál era la cámara real.
@@ -116,13 +116,8 @@ También falló la instalación de pykms, una dependencia requerida para la visu
  4. **No aparecía la imagen en la transmisión de Flask:**
 	+ **Problema:** Aunque Flask estaba corriendo en la Raspberry Pi, al acceder desde otra computadora en http://192.168.100.17:5000/video_feed, la página aparecía en blanco.
 	+ **Causa:**
- 	    1. El firewall UFW estaba bloqueando el puerto 5000.
-	    2. OpenCV no estaba accediendo correctamente a la cámara.
-            3. La IP era accesible, pero Chrome bloqueaba la conexión (probablemente por HTTP en lugar de HTTPS).
+ 	    1. OpenCV no estaba accediendo correctamente a la cámara.
+	    2. La IP era accesible, pero Chrome bloqueaba la conexión (probablemente por HTTP en lugar de HTTPS).
 	+ **Solución:**
-	    1. Se usó:
-        ```sudo ufw allow 5000/tcp ```
-         pero ufw estaba desactivado, por lo que no afectaba.
-        
-            2. Se probó abrir http://192.168.100.17:5000 en Safari, y funcionó, lo que confirmó que Chrome estaba bloqueando la conexión.
+	    1. Se probó abrir http://192.168.100.17:5000 en Safari, y funcionó, lo que confirmó que Chrome estaba bloqueando la conexión.
 
